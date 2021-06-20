@@ -1,16 +1,21 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {Dimensions, ScrollView, useWindowDimensions} from 'react-native';
+import {
+  Dimensions,
+  ScrollView,
+  TouchableOpacity,
+  useWindowDimensions,
+} from 'react-native';
 import {Image, StyleSheet} from 'react-native';
 import {View, Text, ActivityIndicator} from 'react-native';
 import {RootStackParams} from '../routes/Navigation';
 import {useMovieDetail} from '../hooks/useMovieDetail';
 import MovieDetails from '../components/MovieDetails';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 interface Props extends StackScreenProps<RootStackParams, 'details'> {}
 const sxrenHei = Dimensions.get('screen').height;
 
-const DetailScreen = ({route}: Props) => {
+const DetailScreen = ({route, navigation}: Props) => {
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
@@ -33,11 +38,23 @@ const DetailScreen = ({route}: Props) => {
       ) : (
         <MovieDetails movieFull={movieFull!} cast={cast} />
       )}
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={styles.backbtn}>
+        <Icon color="white" name="arrow-back-outline" size={50} />
+      </TouchableOpacity>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  backbtn: {
+    position: 'absolute',
+    zIndex: 99,
+    elevation: 9,
+    top: 30,
+    left: 5,
+  },
   imgContainer: {
     width: '100%',
     height: sxrenHei * 0.7,
