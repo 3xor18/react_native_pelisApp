@@ -2,9 +2,10 @@ import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {Dimensions, ScrollView, useWindowDimensions} from 'react-native';
 import {Image, StyleSheet} from 'react-native';
-import {View, Text} from 'react-native';
+import {View, Text, ActivityIndicator} from 'react-native';
 import {RootStackParams} from '../routes/Navigation';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {useMovieDetail} from '../hooks/useMovieDetail';
+import MovieDetails from '../components/MovieDetails';
 
 interface Props extends StackScreenProps<RootStackParams, 'details'> {}
 const sxrenHei = Dimensions.get('screen').height;
@@ -12,6 +13,8 @@ const sxrenHei = Dimensions.get('screen').height;
 const DetailScreen = ({route}: Props) => {
   const movie = route.params;
   const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+  const {isLoading, cast, movieFull} = useMovieDetail(movie.id);
 
   return (
     <ScrollView>
@@ -25,9 +28,11 @@ const DetailScreen = ({route}: Props) => {
         <Text style={styles.title}>{movie.title}</Text>
       </View>
 
-      <View style={styles.marginContainer}>
-        <Icon name="star-outline" color="grey" size={20} />
-      </View>
+      {isLoading ? (
+        <ActivityIndicator size={35} color="grey" style={{marginTop: 20}} />
+      ) : (
+        <MovieDetails movieFull={movieFull!} cast={cast} />
+      )}
     </ScrollView>
   );
 };
