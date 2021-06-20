@@ -6,6 +6,7 @@ import MoviePosrter from '../components/MoviePosrter';
 import {useMovies} from '../hooks/useMovies';
 import {useWindowDimensions} from 'react-native';
 import HorizontalSlider from '../components/HorizontalSlider';
+import GradientBackgroud from '../components/GradientBackgroud';
 
 const HomeScreen = () => {
   const {width, height} = useWindowDimensions();
@@ -21,24 +22,26 @@ const HomeScreen = () => {
   }
 
   return (
-    <ScrollView>
-      <View style={{marginTop: top + 20}}>
-        {/* Carousel Principal */}
-        <View style={{height: height - height / 0.9}}>
-          <Carousel
-            data={nowPlaying}
-            renderItem={({item}: any) => <MoviePosrter movie={item} />}
-            sliderWidth={width}
-            itemWidth={300}
-            inactiveSlideOpacity={0.9}
-          />
-          {/* Populares */}
-          <HorizontalSlider title="Popular" movies={popular} />
-          <HorizontalSlider title="Top Rated" movies={topRated} />
-          <HorizontalSlider title="Up Coming" movies={upComing} />
+    <GradientBackgroud>
+      <ScrollView>
+        <View style={{marginTop: top + 20}}>
+          {/* Carousel Principal */}
+          <View style={{height: height - height / 0.9}}>
+            <Carousel
+              data={nowPlaying}
+              renderItem={({item}: any) => <MoviePosrter movie={item} />}
+              sliderWidth={width}
+              itemWidth={300}
+              inactiveSlideOpacity={0.9}
+            />
+            {/* Populares */}
+            <HorizontalSlider title="Popular" movies={popular} />
+            <HorizontalSlider title="Top Rated" movies={topRated} />
+            <HorizontalSlider title="Up Coming" movies={upComing} />
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </GradientBackgroud>
   );
 };
 
