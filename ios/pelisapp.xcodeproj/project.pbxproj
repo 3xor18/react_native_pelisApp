@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1479CAF910DD5EE3C660E09E /* libPods-pelisapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B00C1B610CE687AA678A67 /* libPods-pelisapp.a */; };
+		42442877267EC53C0079AF40 /* Ionicons.js in Resources */ = {isa = PBXBuildFile; fileRef = 42442876267EC53C0079AF40 /* Ionicons.js */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FB68E3E8DAA0C664506E007F /* libPods-pelisapp-pelisappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B59ED05C4C6B355F920698D /* libPods-pelisapp-pelisappTests.a */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = pelisapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = pelisapp/main.m; sourceTree = "<group>"; };
 		29B00C1B610CE687AA678A67 /* libPods-pelisapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pelisapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42442876267EC53C0079AF40 /* Ionicons.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = Ionicons.js; path = "../../node_modules/react-native-vector-icons/Ionicons.js"; sourceTree = "<group>"; };
 		4303BED44FBBDDCBD08D4B4C /* Pods-pelisapp-pelisappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pelisapp-pelisappTests.release.xcconfig"; path = "Target Support Files/Pods-pelisapp-pelisappTests/Pods-pelisapp-pelisappTests.release.xcconfig"; sourceTree = "<group>"; };
 		4B59ED05C4C6B355F920698D /* libPods-pelisapp-pelisappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pelisapp-pelisappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64633094330BF0C6B2D85129 /* Pods-pelisapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pelisapp.release.xcconfig"; path = "Target Support Files/Pods-pelisapp/Pods-pelisapp.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		42442875267EC4FC0079AF40 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				42442876267EC53C0079AF40 /* Ionicons.js */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		5614BEAB846A779626EAE34E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +124,6 @@
 				C0A04035CBBB6A39DEAF72C6 /* Pods-pelisapp-pelisappTests.debug.xcconfig */,
 				4303BED44FBBDDCBD08D4B4C /* Pods-pelisapp-pelisappTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,6 +137,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				42442875267EC4FC0079AF40 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* pelisapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* pelisappTests */,
@@ -244,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				42442877267EC53C0079AF40 /* Ionicons.js in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

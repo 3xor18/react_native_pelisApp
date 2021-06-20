@@ -1,5 +1,5 @@
-export interface MovieDbNowPlaying {
-  dates: Dates;
+export interface MovieDBResponse {
+  dates?: Dates;
   page: number;
   results: Movie[];
   total_pages: number;
